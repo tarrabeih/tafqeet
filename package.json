@@ -1,6 +1,6 @@
 {
   "name": "tafqeet-arabic-numbers",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Convert numbers to Arabic words (تفقيط) with proper formatting and commas",
   "keywords": [
     "arabic",
