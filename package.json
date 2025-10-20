@@ -12,13 +12,13 @@
     "numerals",
     "arabic-numbers"
   ],
-  "homepage": "https://github.com/your-username/tafqeet#readme",
+  "homepage": "https://github.com/tarrabeih/tafqeet#readme",
   "bugs": {
-    "url": "https://github.com/your-username/tafqeet/issues"
+    "url": "https://github.com/tarrabeih/tafqeet/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/your-username/tafqeet.git"
+    "url": "git+https://github.com/tarrabeih/tafqeet.git"
   },
   "license": "MIT",
   "author": "Your Name ahmadtarrabeih@gmail.com",
