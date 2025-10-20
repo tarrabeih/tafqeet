@@ -1,0 +1,25 @@
+{
+  "name": "tafqeet-arabic-numbers",
+  "version": "1.0.0",
+  "description": "Convert numbers to Arabic words (تفقيط) with proper formatting and commas",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    "arabic",
+    "numbers",
+    "tafqeet",
+    "تفقيط",
+    "convert",
+    "words",
+    "numerals",
+    "arabic-numbers"
+  ],
+  "author": "Your Name ahmadtarrabeih@gmail.com",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/tafqeet.git"
+  }
+}
