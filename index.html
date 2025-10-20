@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تفقيط الأرقام</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 500px;
+        margin: 50px auto;
+        padding: 20px;
+        text-align: center;
+      }
+      input {
+        width: 100%;
+        padding: 12px;
+        font-size: 18px;
+        text-align: center;
+        border: 2px solid #3498db;
+        border-radius: 8px;
+        margin: 10px 0;
+      }
+      .result {
+        margin-top: 20px;
+        padding: 15px;
+        background: #f8f9fa;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+      }
+      .arabic-text {
+        font-size: 20px;
+        color: #e74c3c;
+        font-weight: bold;
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>تفقيط الأرقام</h1>
+    <input
+      type="text"
+      id="numberInput"
+      placeholder="أدخل رقماً..."
+      autocomplete="off"
+    />
+    <div id="result"></div>
+
+    <!-- Load your published package from CDN -->
+    <script src="https://unpkg.com/tafqeet-arabic-numbers"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const numberInput = document.getElementById("numberInput");
+        const resultDiv = document.getElementById("result");
+
+        numberInput.addEventListener("input", function (e) {
+          // Remove any non-digit characters except minus sign
+          let value = e.target.value.replace(/[^\d-]/g, "");
+
+          // Handle multiple minus signs
+          if (value.split("-").length > 2) {
+            value = "-" + value.replace(/-/g, "");
+          }
+
+          e.target.value = value;
+
+          if (value === "" || value === "-") {
+            resultDiv.innerHTML = "";
+            return;
+          }
+
+          const number = parseInt(value);
+          if (!isNaN(number)) {
+            // Use your published package
+            const result = tafqeet.tafqeet(number);
+            displayResult(result);
+          }
+        });
+
+        function displayResult(result) {
+          resultDiv.innerHTML = `
+                    <div class="result">
+                        <div class="arabic-text">${result.formattedNumber}</div>
+                        <div style="font-size: 16px; color: #2c3e50;">${result.words}</div>
+                        <div style="font-size: 14px; color: #7f8c8d; margin-top: 10px;">${result.fullText}</div>
+                    </div>
+                `;
+        }
+
+        // Focus on input when page loads
+        numberInput.focus();
+      });
+    </script>
+  </body>
+</html>
